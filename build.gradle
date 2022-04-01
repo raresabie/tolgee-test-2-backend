@@ -1,0 +1,135 @@
+/*
+ * Copyright (c) 2020. Tolgee
+ */
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+    }
+}
+
+project.ext {
+    dbSchemaContainerName = 'tolgee_postgres_dbschema'
+}
+
+if (System.getenv().containsKey("VERSION")) {
+    project.version = System.getenv().get("VERSION")
+} else {
+    project.version = 'local'
+}
+
+configurations {
+    ktlint
+}
+
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+def unpackTarget = "${project.buildDir}/dependency"
+
+dependencies {
+    ktlint("com.pinterest:ktlint:0.43.2") {
+        attributes {
+            attribute(Bundling.BUNDLING_ATTRIBUTE, getObjects().named(Bundling, Bundling.EXTERNAL))
+        }
+    }
+}
+
+project(':server-app').afterEvaluate {
+    task unpack(type: Copy) {
+        from(zipTree(project(':server-app').tasks.findByName("bootJar").outputs.files.singleFile))
+        into(unpackTarget)
+        if (System.getenv("SKIP_SERVER_BUILD") != "true") {
+            dependsOn "bootJar"
+        }
+    }
+
+    task addVersionFile(type: Task) {
+        mustRunAfter unpack
+        doLast {
+            def file = new File("${unpackTarget}/BOOT-INF/classes/.VERSION")
+            file.write(project.version.toString())
+        }
+    }
+
+    apply from: "./gradle/webapp.gradle"
+    apply from: "./gradle/docker.gradle"
+    apply from: "./gradle/e2e.gradle"
+
+    project.tasks.findByName("docker").mustRunAfter(copyDist)
+
+    task packResources(type: Zip) {
+        dependsOn "unpack"
+        dependsOn "copyDist"
+        dependsOn "addVersionFile"
+        from "${project.projectDir}/build/dependency"
+        archiveFileName = "tolgee-${project.version}.jar"
+        destinationDirectory = file("$buildDir/libs")
+        entryCompression ZipEntryCompression.STORED
+    }
+
+    task build {
+        dependsOn project(':server-app').tasks.findByName("build")
+        dependsOn runE2e
+    }
+
+    task check {
+        dependsOn project(':server-app').tasks.findByName("check")
+        dependsOn ktlint
+    }
+    task bootJar {
+        dependsOn project(':server-app').tasks.findByName("bootJar")
+    }
+
+    task startDbChangelogContainer {
+        doLast {
+            exec {
+                commandLine "docker", "run", "-e", "POSTGRES_PASSWORD=postgres", "-d", "-p55432:5432", "--name", dbSchemaContainerName, "postgres:13"
+            }
+            Thread.sleep(5000)
+        }
+    }
+
+    task stopDbChangelogContainer(type: Exec) {
+        commandLine "docker", "rm", "--force", dbSchemaContainerName
+        mustRunAfter project(':data').tasks.findByName("diffChangeLog")
+    }
+
+    task diffChangeLog {
+        project(':data').tasks.findByName("diffChangeLog").mustRunAfter(project(':server-app').tasks.findByName("bootRun"))
+        project(':server-app').tasks.findByName("bootRun").mustRunAfter(startDbChangelogContainer)
+        finalizedBy = [
+                startDbChangelogContainer,
+                project(':server-app').tasks.findByName("bootRun"),
+                project(':data').tasks.findByName("diffChangeLog"),
+                stopDbChangelogContainer
+        ]
+        doFirst {
+            project(':server-app').bootRun.systemProperty('spring.profiles.active', 'dbschema')
+        }
+    }
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "**/*.kt", "!**/data/PluralData.kt"
+}
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "-F", "**/*.kt", "!**/data/PluralData.kt"
+}
+
+subprojects {
+    task allDeps(type: DependencyReportTask) {}
+}

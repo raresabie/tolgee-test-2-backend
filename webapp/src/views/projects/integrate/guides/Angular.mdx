@@ -1,0 +1,82 @@
+import { GoToDocsButton } from '../component/GoToDocsButton';
+
+<GoToDocsButton
+  href="https://tolgee.io/docs/web/using_with_angular/installation"
+  style={{ float: 'right' }}
+/>
+
+To read full documentation about Tolgee for Angular, visit [docs](https://tolgee.io/docs/web/using_with_angular/installation).
+
+## Install packages
+
+```
+npm install @tolgee/ngx @tolgee/ui
+```
+
+## Setup environment
+
+Add Tolgee properties to your `src/environments/environment.<your env>.ts`
+
+```typescript
+export const environment = {
+  production: false,
+  tolgeeApiUrl: '{{{apiUrl}}}',
+  tolgeeApiKey: '{{{apiKey}}}',
+};
+```
+
+## Setup NgModule
+
+Add NgxTolgeeModule to the imports section.
+
+```typescript
+import { NgxTolgeeModule } from "@tolgee/ngx";
+import { NgModule } from '@angular/core';
+import { environment } from '../environments/environment';
+
+
+@NgModule({
+  declarations: [
+    ...
+  ],
+  imports: [
+    ...,
+    NgxTolgeeModule.forRoot({
+      apiUrl: environment.tolgeeApiUrl,
+      apiKey: environment.tolgeeApiKey,
+      ui: environment.tolgeeApiKey ? require('@tolgee/ui') : undefined
+    }),
+...,
+],
+...,
+})
+export class AppModule {
+}
+```
+
+Maybe you will also need to set `skipLibCheck` to `true` in your `compilerOptions` section of `tsconfig.json`.
+
+## Use Tolgee!
+
+```html
+<div t key="hello_world"></div>
+```
+
+or
+
+```html
+<h1>{{'hello_world' | translate}}</h1>
+```
+
+or
+
+```typescript
+this.translateService
+  .get('hello_world')
+  .subscribe((r) => (this.helloWorld = r));
+```
+
+## Prepare for production
+
+To prepare your App for production, choose a suitable option described
+[here](https://tolgee.io/docs/web/using_with_angular/angular_preparing_for_production).
