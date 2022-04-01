@@ -1,9 +1,0 @@
-tolgee:
-  file-storage:
-    fs-data-path: /data
-  authentication:
-    enabled: false
-  cache:
-    caffeine-max-size: 1000000
-  postgres-autostart:
-    mode: EMBEDDED
