@@ -1,0 +1,88 @@
+io/tolgee/security/payload/JwtAuthenticationResponse.java
+ io.tolgee.security.payload.JwtAuthenticationResponse
+io/tolgee/model/UserAccount_.java
+ io.tolgee.model.UserAccount_
+io/tolgee/model/Project_.java
+ io.tolgee.model.Project_
+io/tolgee/dtos/PathDTO.java
+ io.tolgee.dtos.PathDTO
+io/tolgee/model/key/Tag_.java
+ io.tolgee.model.key.Tag_
+io/tolgee/model/dataImport/issues/ImportFileIssueParam_.java
+ io.tolgee.model.dataImport.issues.ImportFileIssueParam_
+io/tolgee/model/Screenshot_.java
+ io.tolgee.model.Screenshot_
+io/tolgee/model/Permission_.java
+ io.tolgee.model.Permission_
+io/tolgee/security/payload/LoginRequest.java
+ io.tolgee.security.payload.LoginRequest
+io/tolgee/model/dataImport/ImportFile_.java
+ io.tolgee.model.dataImport.ImportFile_
+io/tolgee/model/key/Key_.java
+ io.tolgee.model.key.Key_
+io/tolgee/model/UploadedImage_.java
+ io.tolgee.model.UploadedImage_
+io/tolgee/model/key/KeyComment_.java
+ io.tolgee.model.key.KeyComment_
+io/tolgee/model/Revision_.java
+ io.tolgee.model.Revision_
+io/tolgee/dtos/response/ViewDataResponse.java
+ io.tolgee.dtos.response.ViewDataResponse
+io/tolgee/model/dataImport/issues/ImportFileIssue_.java
+ io.tolgee.model.dataImport.issues.ImportFileIssue_
+io/tolgee/model/dataImport/ImportKey_.java
+ io.tolgee.model.dataImport.ImportKey_
+io/tolgee/model/dataImport/ImportLanguage_.java
+ io.tolgee.model.dataImport.ImportLanguage_
+io/tolgee/model/key/KeyCodeReference_.java
+ io.tolgee.model.key.KeyCodeReference_
+io/tolgee/model/AuditModel_.java
+ io.tolgee.model.AuditModel_
+io/tolgee/dtos/response/PermissionDTO.java
+ io.tolgee.dtos.response.PermissionDTO
+ io.tolgee.dtos.response.PermissionDTO$PermissionDTOBuilder
+io/tolgee/dtos/response/translations_view/ResponseParams.java
+ io.tolgee.dtos.response.translations_view.ResponseParams
+io/tolgee/model/Organization_.java
+ io.tolgee.model.Organization_
+io/tolgee/model/StandardAuditModel_.java
+ io.tolgee.model.StandardAuditModel_
+io/tolgee/model/dataImport/ImportTranslation_.java
+ io.tolgee.model.dataImport.ImportTranslation_
+io/tolgee/model/key/KeyMeta_.java
+ io.tolgee.model.key.KeyMeta_
+io/tolgee/model/MtCreditBucket_.java
+ io.tolgee.model.MtCreditBucket_
+io/tolgee/security/JwtToken.java
+ io.tolgee.security.JwtToken
+io/tolgee/model/EmailVerification_.java
+ io.tolgee.model.EmailVerification_
+io/tolgee/model/OrganizationRole_.java
+ io.tolgee.model.OrganizationRole_
+io/tolgee/security/payload/ValidateTokenRequest.java
+ io.tolgee.security.payload.ValidateTokenRequest
+io/tolgee/model/Language_.java
+ io.tolgee.model.Language_
+io/tolgee/dtos/response/InvitationDTO.java
+ io.tolgee.dtos.response.InvitationDTO
+ io.tolgee.dtos.response.InvitationDTO$InvitationDTOBuilder
+io/tolgee/security/payload/ApiResponse.java
+ io.tolgee.security.payload.ApiResponse
+io/tolgee/model/MtServiceConfig_.java
+ io.tolgee.model.MtServiceConfig_
+io/tolgee/dtos/response/PaginationMeta.java
+ io.tolgee.dtos.response.PaginationMeta
+io/tolgee/security/api_key_auth/ApiKeyAuthenticationToken.java
+ io.tolgee.security.api_key_auth.ApiKeyAuthenticationToken
+io/tolgee/model/translation/TranslationComment_.java
+ io.tolgee.model.translation.TranslationComment_
+io/tolgee/model/AutoTranslationConfig_.java
+ io.tolgee.model.AutoTranslationConfig_
+io/tolgee/model/Invitation_.java
+ io.tolgee.model.Invitation_
+io/tolgee/model/translation/Translation_.java
+ io.tolgee.model.translation.Translation_
+io/tolgee/model/ApiKey_.java
+ io.tolgee.model.ApiKey_
+io/tolgee/model/dataImport/Import_.java
+ io.tolgee.model.dataImport.Import_

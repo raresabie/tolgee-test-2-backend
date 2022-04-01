@@ -1,0 +1,641 @@
+{
+  "groups": [
+    {
+      "name": "tolgee",
+      "type": "io.tolgee.configuration.tolgee.TolgeeProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.authentication",
+      "type": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.github",
+      "type": "io.tolgee.configuration.tolgee.GithubAuthenticationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.GithubAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap",
+      "type": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.cache",
+      "type": "io.tolgee.configuration.tolgee.CacheProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.CacheProperties"
+    },
+    {
+      "name": "tolgee.file-storage",
+      "type": "io.tolgee.configuration.tolgee.FileStorageProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.FileStorageProperties"
+    },
+    {
+      "name": "tolgee.file-storage.s3",
+      "type": "io.tolgee.configuration.tolgee.S3Settings",
+      "sourceType": "io.tolgee.configuration.tolgee.S3Settings"
+    },
+    {
+      "name": "tolgee.import",
+      "type": "io.tolgee.configuration.tolgee.ImportProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.ImportProperties"
+    },
+    {
+      "name": "tolgee.internal",
+      "type": "io.tolgee.configuration.tolgee.InternalProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.InternalProperties"
+    },
+    {
+      "name": "tolgee.machine-translation",
+      "type": "io.tolgee.configuration.tolgee.machineTranslation.MachineTranslationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.MachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.aws",
+      "type": "io.tolgee.configuration.tolgee.machineTranslation.AwsMachineTranslationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.AwsMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.google",
+      "type": "io.tolgee.configuration.tolgee.machineTranslation.GoogleMachineTranslationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.GoogleMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart",
+      "type": "io.tolgee.configuration.tolgee.PostgresAutostartProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.PostgresAutostartProperties"
+    },
+    {
+      "name": "tolgee.rate-limits",
+      "type": "io.tolgee.configuration.tolgee.RateLimitProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.RateLimitProperties"
+    },
+    {
+      "name": "tolgee.recaptcha",
+      "type": "io.tolgee.configuration.tolgee.ReCaptchaProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.ReCaptchaProperties"
+    },
+    {
+      "name": "tolgee.send-in-blue",
+      "type": "io.tolgee.configuration.tolgee.SendInBlueProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.SendInBlueProperties"
+    },
+    {
+      "name": "tolgee.sentry",
+      "type": "io.tolgee.configuration.tolgee.SentryProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.SentryProperties"
+    },
+    {
+      "name": "tolgee.smtp",
+      "type": "io.tolgee.configuration.tolgee.SmtpProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.socket-io",
+      "type": "io.tolgee.configuration.tolgee.SocketIoProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.SocketIoProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "tolgee.app-name",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.authentication",
+      "type": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.authentication.create-initial-user",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tolgee.authentication.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tolgee.authentication.github",
+      "type": "io.tolgee.configuration.tolgee.GithubAuthenticationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.github.authorization-url",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.GithubAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.github.client-id",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.GithubAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.github.client-secret",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.GithubAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.github.user-url",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.GithubAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.initial-password",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.initial-username",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.jwt-expiration",
+      "type": "java.lang.Integer",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "tolgee.authentication.jwt-secret",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap",
+      "type": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap.base-dn",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap.port",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap.principal-password",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap.security-principal",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap.urls",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.ldap.user-dn-pattern",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.LdapAuthenticationProperties"
+    },
+    {
+      "name": "tolgee.authentication.native-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tolgee.authentication.needs-email-verification",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tolgee.authentication.registrations-allowed",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tolgee.authentication.secured-image-retrieval",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tolgee.authentication.secured-image-timestamp-max-age",
+      "type": "java.lang.Long",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "tolgee.authentication.user-can-create-organizations",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tolgee.authentication.user-can-create-projects",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.AuthenticationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tolgee.cache",
+      "type": "io.tolgee.configuration.tolgee.CacheProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.cache.caffeine-max-size",
+      "type": "java.lang.Long",
+      "sourceType": "io.tolgee.configuration.tolgee.CacheProperties"
+    },
+    {
+      "name": "tolgee.cache.default-ttl",
+      "type": "java.lang.Long",
+      "sourceType": "io.tolgee.configuration.tolgee.CacheProperties"
+    },
+    {
+      "name": "tolgee.cache.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.CacheProperties"
+    },
+    {
+      "name": "tolgee.cache.use-redis",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.CacheProperties"
+    },
+    {
+      "name": "tolgee.file-storage",
+      "type": "io.tolgee.configuration.tolgee.FileStorageProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.file-storage-url",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.file-storage.fs-data-path",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.FileStorageProperties"
+    },
+    {
+      "name": "tolgee.file-storage.s3",
+      "type": "io.tolgee.configuration.tolgee.S3Settings",
+      "sourceType": "io.tolgee.configuration.tolgee.FileStorageProperties"
+    },
+    {
+      "name": "tolgee.file-storage.s3.access-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.S3Settings"
+    },
+    {
+      "name": "tolgee.file-storage.s3.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.S3Settings"
+    },
+    {
+      "name": "tolgee.file-storage.s3.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.S3Settings"
+    },
+    {
+      "name": "tolgee.file-storage.s3.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.S3Settings"
+    },
+    {
+      "name": "tolgee.file-storage.s3.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.S3Settings"
+    },
+    {
+      "name": "tolgee.file-storage.s3.signing-region",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.S3Settings"
+    },
+    {
+      "name": "tolgee.front-end-url",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.import.create-implicit-api-key",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.ImportProperties"
+    },
+    {
+      "name": "tolgee.import.dir",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.ImportProperties"
+    },
+    {
+      "name": "tolgee.internal",
+      "type": "io.tolgee.configuration.tolgee.InternalProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.internal.controller-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.InternalProperties"
+    },
+    {
+      "name": "tolgee.internal.fake-github-login",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.InternalProperties"
+    },
+    {
+      "name": "tolgee.internal.fake-mt-providers",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.InternalProperties"
+    },
+    {
+      "name": "tolgee.internal.show-version",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.InternalProperties"
+    },
+    {
+      "name": "tolgee.internal.stop-right-after-start",
+      "type": "java.lang.Boolean",
+      "description": "Stops server right after it's started. This is used for database changelog generation. We need to apply the schema and then exit to run the schema generator.",
+      "sourceType": "io.tolgee.configuration.tolgee.InternalProperties"
+    },
+    {
+      "name": "tolgee.machine-translation",
+      "type": "io.tolgee.configuration.tolgee.machineTranslation.MachineTranslationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.aws",
+      "type": "io.tolgee.configuration.tolgee.machineTranslation.AwsMachineTranslationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.MachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.aws.access-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.AwsMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.aws.default-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.AwsMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.aws.default-primary",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.AwsMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.aws.region",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.AwsMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.aws.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.AwsMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.free-credits-amount",
+      "type": "java.lang.Long",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.MachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.google",
+      "type": "io.tolgee.configuration.tolgee.machineTranslation.GoogleMachineTranslationProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.MachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.google.api-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.GoogleMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.google.default-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.GoogleMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.machine-translation.google.default-primary",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.machineTranslation.GoogleMachineTranslationProperties"
+    },
+    {
+      "name": "tolgee.max-screenshots-per-key",
+      "type": "java.lang.Integer",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "tolgee.max-translation-text-length",
+      "type": "java.lang.Long",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "tolgee.max-upload-file-size",
+      "type": "java.lang.Integer",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "tolgee.open-replay-api-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.p18-1555085778",
+      "type": "io.tolgee.configuration.tolgee.ImportProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart",
+      "type": "io.tolgee.configuration.tolgee.PostgresAutostartProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart.container-name",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.PostgresAutostartProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart.database-name",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.PostgresAutostartProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.PostgresAutostartProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart.mode",
+      "type": "io.tolgee.configuration.tolgee.PostgresAutostartProperties$PostgresAutostartMode",
+      "sourceType": "io.tolgee.configuration.tolgee.PostgresAutostartProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart.password",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.PostgresAutostartProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart.port",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.PostgresAutostartProperties"
+    },
+    {
+      "name": "tolgee.postgres-autostart.user",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.PostgresAutostartProperties"
+    },
+    {
+      "name": "tolgee.rate-limit-properties",
+      "type": "io.tolgee.configuration.tolgee.RateLimitProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.rate-limits.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.RateLimitProperties"
+    },
+    {
+      "name": "tolgee.recaptcha",
+      "type": "io.tolgee.configuration.tolgee.ReCaptchaProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.recaptcha.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.ReCaptchaProperties"
+    },
+    {
+      "name": "tolgee.recaptcha.site-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.ReCaptchaProperties"
+    },
+    {
+      "name": "tolgee.send-in-blue-properties",
+      "type": "io.tolgee.configuration.tolgee.SendInBlueProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.send-in-blue.api-key",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SendInBlueProperties"
+    },
+    {
+      "name": "tolgee.send-in-blue.list-id",
+      "type": "java.lang.Long",
+      "sourceType": "io.tolgee.configuration.tolgee.SendInBlueProperties"
+    },
+    {
+      "name": "tolgee.sentry",
+      "type": "io.tolgee.configuration.tolgee.SentryProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.sentry.client-dsn",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SentryProperties"
+    },
+    {
+      "name": "tolgee.sentry.server-dsn",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SentryProperties"
+    },
+    {
+      "name": "tolgee.smtp",
+      "type": "io.tolgee.configuration.tolgee.SmtpProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.smtp.auth",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.smtp.from",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.smtp.host",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.smtp.password",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.smtp.port",
+      "type": "java.lang.Integer",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.smtp.ssl-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.smtp.tls-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.smtp.tls-required",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.smtp.username",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SmtpProperties"
+    },
+    {
+      "name": "tolgee.socket-io",
+      "type": "io.tolgee.configuration.tolgee.SocketIoProperties",
+      "sourceType": "io.tolgee.configuration.tolgee.TolgeeProperties"
+    },
+    {
+      "name": "tolgee.socket-io.allowed-transports",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "io.tolgee.configuration.tolgee.SocketIoProperties"
+    },
+    {
+      "name": "tolgee.socket-io.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.SocketIoProperties"
+    },
+    {
+      "name": "tolgee.socket-io.external-url",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SocketIoProperties"
+    },
+    {
+      "name": "tolgee.socket-io.host",
+      "type": "java.lang.String",
+      "sourceType": "io.tolgee.configuration.tolgee.SocketIoProperties"
+    },
+    {
+      "name": "tolgee.socket-io.port",
+      "type": "java.lang.Integer",
+      "sourceType": "io.tolgee.configuration.tolgee.SocketIoProperties"
+    },
+    {
+      "name": "tolgee.socket-io.use-redis",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tolgee.configuration.tolgee.SocketIoProperties"
+    }
+  ],
+  "hints": []
+}
