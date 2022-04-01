@@ -176,6 +176,11 @@ test {
     //maxParallelForks = (int) (Runtime.runtime.availableProcessors() / 2 + 1)
 }
 
+task stage(dependsOn: ['build', 'clean']) {
+    build.mustRunAfter clean
+}
+
+
 task runContextRecreatingTests(type: Test, group: 'verification') {
     useJUnitPlatform {
         includeTags "contextRecreating"
